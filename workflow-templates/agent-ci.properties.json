@@ -1,0 +1,6 @@
+{
+  "name": "KMANWeb Agent CI",
+  "description": "Run repository validation on disposable KMANWeb self-hosted CI.",
+  "iconName": "octicon rocket",
+  "categories": ["Continuous integration", "Automation"]
+}

@@ -1,0 +1,15 @@
+name: Agent CI
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    uses: ojs-inator/kmanweb-ci/.github/workflows/reusable-agent-ci.yml@main
+    with:
+      # Replace this with the repository's real validation command.
+      command: make test

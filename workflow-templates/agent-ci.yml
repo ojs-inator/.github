@@ -7,6 +7,12 @@ on:
 permissions:
   contents: read
 
+# Supersede stale caller runs here. The reusable workflow intentionally owns
+# no concurrency group so sibling reusable calls cannot cancel each other.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 jobs:
   validate:
     uses: ojs-inator/kmanweb-ci/.github/workflows/reusable-agent-ci.yml@main
